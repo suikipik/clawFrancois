@@ -19,8 +19,8 @@
 
 **Purpose**: Add new dependencies and configuration support
 
-- [ ] T001 Add whisper_model and max_audio_duration fields to BridgeConfig in src/config.py
-- [ ] T002 Update config.example.json with new whisper_model and max_audio_duration fields
+- [x] T001 Add whisper_model and max_audio_duration fields to BridgeConfig in src/config.py
+- [x] T002 Update config.example.json with new whisper_model and max_audio_duration fields
 
 ---
 

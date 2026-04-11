@@ -4,5 +4,7 @@
   "allowed_user_ids": [],
   "max_prompt_length": 10000,
   "edit_interval_ms": 1000,
-  "bind_address": "127.0.0.1"
+  "bind_address": "127.0.0.1",
+  "whisper_model": "base",
+  "max_audio_duration": 300
 }
