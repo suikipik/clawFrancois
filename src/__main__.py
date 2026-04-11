@@ -50,6 +50,8 @@ def main() -> None:
         auth_manager=auth_manager,
         max_prompt_length=config.max_prompt_length,
         edit_interval_ms=config.edit_interval_ms,
+        whisper_model=config.whisper_model,
+        max_audio_duration=config.max_audio_duration,
     )
 
     app = ApplicationBuilder().token(config.bot_token).build()
