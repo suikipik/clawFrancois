@@ -21,7 +21,7 @@ from telegram.ext import (
 from src.auth import AuthManager
 from src.bridge import run_prompt
 from src.session import Session, SessionState
-from src.transcriber import TranscriptionResult, transcribe_audio
+from src.transcriber import TranscriptionResult, check_whisper_available, transcribe_audio
 
 logger = logging.getLogger(__name__)
 
@@ -120,11 +120,13 @@ class TelegramAdapter:
 
         import shutil
         cli_available = shutil.which("claude") is not None
+        whisper_available = check_whisper_available()
 
         lines = [
             f"State: {state}",
             f"Uptime: {hours}h {minutes}m {seconds}s",
             f"CLI available: {'yes' if cli_available else 'no'}",
+            f"Voice transcription: {'yes' if whisper_available else 'no'}",
         ]
         await update.message.reply_text("\n".join(lines))
 
