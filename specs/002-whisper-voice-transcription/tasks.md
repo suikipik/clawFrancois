@@ -47,12 +47,12 @@
 
 ### Implementation for User Story 1
 
-- [ ] T007 [US1] Add voice/audio message handler method handle_voice() in src/telegram_adapter.py that downloads audio, calls transcriber, and forwards text to run_prompt()
-- [ ] T008 [US1] Implement audio file download using Voice.get_file() and File.download_to_drive() to a temp directory in handle_voice() in src/telegram_adapter.py
-- [ ] T009 [US1] Add audio duration validation in handle_voice() — reject messages exceeding max_audio_duration with a descriptive error in src/telegram_adapter.py
-- [ ] T010 [US1] Wire transcribed text into the existing prompt execution flow (session.start_execution + run_prompt + streaming) in handle_voice() in src/telegram_adapter.py
-- [ ] T011 [US1] Register voice handler with filters.VOICE and filters.AUDIO in register_handlers() in src/telegram_adapter.py
-- [ ] T012 [US1] Add temp file cleanup in handle_voice() finally block — delete downloaded audio regardless of success/failure in src/telegram_adapter.py
+- [x] T007 [US1] Add voice/audio message handler method handle_voice() in src/telegram_adapter.py that downloads audio, calls transcriber, and forwards text to run_prompt()
+- [x] T008 [US1] Implement audio file download using Voice.get_file() and File.download_to_drive() to a temp directory in handle_voice() in src/telegram_adapter.py
+- [x] T009 [US1] Add audio duration validation in handle_voice() — reject messages exceeding max_audio_duration with a descriptive error in src/telegram_adapter.py
+- [x] T010 [US1] Wire transcribed text into the existing prompt execution flow (session.start_execution + run_prompt + streaming) in handle_voice() in src/telegram_adapter.py
+- [x] T011 [US1] Register voice handler with filters.VOICE and filters.AUDIO in register_handlers() in src/telegram_adapter.py
+- [x] T012 [US1] Add temp file cleanup in handle_voice() finally block — delete downloaded audio regardless of success/failure in src/telegram_adapter.py
 
 **Checkpoint**: At this point, voice messages are transcribed and produce Claude responses. MVP complete.
 
