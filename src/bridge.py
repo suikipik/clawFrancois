@@ -24,8 +24,8 @@ async def run_prompt(
         "claude",
         "-p",
         "--output-format", "stream-json",
+        "--verbose",
         "--include-partial-messages",
-        "--bare",
         prompt,
     ]
 
@@ -34,6 +34,7 @@ async def run_prompt(
             *cmd,
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
+            limit=1024 * 1024,  # 1MB line buffer for large stream-json events
         )
     except FileNotFoundError:
         session.complete_execution(127)
@@ -116,14 +117,10 @@ def _extract_text(event: dict) -> str | None:
         if delta.get("type") == "text_delta":
             return delta.get("text")
 
-    # result event at the end
+    # result event at the end — "result" is a plain string
     if event.get("type") == "result":
-        content = event.get("result", {}).get("content", [])
-        parts = []
-        for block in content:
-            if block.get("type") == "text":
-                parts.append(block.get("text", ""))
-        if parts:
-            return "".join(parts)
+        result = event.get("result")
+        if isinstance(result, str) and result:
+            return result
 
     return None
