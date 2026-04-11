@@ -66,9 +66,9 @@
 
 ### Implementation for User Story 2
 
-- [ ] T013 [US2] Send transcription preview message (prefixed "Voice: ") to the user before forwarding to run_prompt() in handle_voice() in src/telegram_adapter.py
-- [ ] T014 [US2] Send "Transcribing..." processing indicator immediately when voice message is received in handle_voice() in src/telegram_adapter.py
-- [ ] T015 [US2] Update "Transcribing..." message to show transcribed text once ready, then start streaming Claude response as a new message in src/telegram_adapter.py
+- [x] T013 [US2] Send transcription preview message (prefixed "Voice: ") to the user before forwarding to run_prompt() in handle_voice() in src/telegram_adapter.py
+- [x] T014 [US2] Send "Transcribing..." processing indicator immediately when voice message is received in handle_voice() in src/telegram_adapter.py
+- [x] T015 [US2] Update "Transcribing..." message to show transcribed text once ready, then start streaming Claude response as a new message in src/telegram_adapter.py
 
 **Checkpoint**: User sees what was transcribed before Claude responds. Stories 1 and 2 both work.
 
@@ -82,11 +82,11 @@
 
 ### Implementation for User Story 3
 
-- [ ] T016 [US3] Add whisper availability check to /status command output using check_whisper_available() in handle_status() in src/telegram_adapter.py
-- [ ] T017 [US3] Handle transcription failure (success=False) in handle_voice() — display error_message to user and reset session in src/telegram_adapter.py
-- [ ] T018 [US3] Handle empty transcription (success=True but text is empty/whitespace) — inform user audio could not be understood in src/telegram_adapter.py
-- [ ] T019 [US3] Handle audio download failure — catch exceptions from get_file()/download_to_drive() and inform user in src/telegram_adapter.py
-- [ ] T020 [US3] Handle whisper CLI timeout (configurable, default 120s) in transcribe_audio() — return TranscriptionResult with timeout error in src/transcriber.py
+- [x] T016 [US3] Add whisper availability check to /status command output using check_whisper_available() in handle_status() in src/telegram_adapter.py
+- [x] T017 [US3] Handle transcription failure (success=False) in handle_voice() — display error_message to user and reset session in src/telegram_adapter.py
+- [x] T018 [US3] Handle empty transcription (success=True but text is empty/whitespace) — inform user audio could not be understood in src/telegram_adapter.py
+- [x] T019 [US3] Handle audio download failure — catch exceptions from get_file()/download_to_drive() and inform user in src/telegram_adapter.py
+- [x] T020 [US3] Handle whisper CLI timeout (configurable, default 120s) in transcribe_audio() — return TranscriptionResult with timeout error in src/transcriber.py
 
 **Checkpoint**: All failure modes produce user-visible errors. No silent failures.
 
