@@ -4,7 +4,7 @@ description: Auto-commit changes after a Spec Kit command completes
 compatibility: Requires spec-kit project structure with .specify/ directory
 metadata:
   author: github-spec-kit
-  source: git:commands/speckit.git.commit.md
+  source: git:commands/speckit-git-commit.md
 user-invocable: true
 disable-model-invocation: true
 ---
