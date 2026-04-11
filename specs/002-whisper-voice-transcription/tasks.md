@@ -30,10 +30,10 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T003 Create TranscriptionResult dataclass in src/transcriber.py with fields: text, language, duration_secs, success, error_message
-- [ ] T004 Implement check_whisper_available() function in src/transcriber.py that checks if whisper CLI is in PATH
-- [ ] T005 Implement transcribe_audio() function in src/transcriber.py that runs whisper CLI as subprocess, reads output .txt file, and returns TranscriptionResult
-- [ ] T006 Add temp file cleanup logic in transcribe_audio() — delete downloaded audio and whisper output files (.txt, .vtt, .srt, .json) in a finally block
+- [x] T003 Create TranscriptionResult dataclass in src/transcriber.py with fields: text, language, duration_secs, success, error_message
+- [x] T004 Implement check_whisper_available() function in src/transcriber.py that checks if whisper CLI is in PATH
+- [x] T005 Implement transcribe_audio() function in src/transcriber.py that runs whisper CLI as subprocess, reads output .txt file, and returns TranscriptionResult
+- [x] T006 Add temp file cleanup logic in transcribe_audio() — delete downloaded audio and whisper output files (.txt, .vtt, .srt, .json) in a finally block
 
 **Checkpoint**: Foundation ready — transcriber module works standalone, user story implementation can begin
 
