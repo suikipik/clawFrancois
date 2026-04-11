@@ -146,6 +146,18 @@ You **MUST** consider the user input before proceeding (if not empty).
    - **Task details**: ID, description, file paths, parallel markers [P]
    - **Execution flow**: Order and dependency requirements
 
+5b. **GitHub Issue Tracking Setup** (if remote is a GitHub URL):
+   - Detect the GitHub remote: `git config --get remote.origin.url`
+   - If the remote is a GitHub URL, extract `owner/repo`
+   - Ensure the required labels exist on the repo (create if missing):
+     ```bash
+     gh label create "in-progress" --repo owner/repo --color "FBCA04" --description "Task currently being worked on" 2>/dev/null || true
+     gh label create "pr-review" --repo owner/repo --color "1D76DB" --description "Implementation done, awaiting PR review/merge" 2>/dev/null || true
+     ```
+   - Check if GitHub issues exist that correspond to tasks (by matching task ID in issue title, e.g. "T001")
+   - Build a mapping of task IDs to GitHub issue numbers for use during implementation
+   - If no matching issues are found, skip issue label management silently
+
 6. Execute implementation following the task plan:
    - **Phase-by-phase execution**: Complete each phase before moving to the next
    - **Respect dependencies**: Run sequential tasks in order, parallel tasks [P] can run together  
@@ -167,6 +179,17 @@ You **MUST** consider the user input before proceeding (if not empty).
    - Provide clear error messages with context for debugging
    - Suggest next steps if implementation cannot proceed
    - **IMPORTANT** For completed tasks, make sure to mark the task off as [X] in the tasks file.
+   - **GitHub Issue Labels** (if issue mapping exists from step 5b):
+     - Label lifecycle: **(no label)** → `in-progress` → `pr-review` → *(auto-closed on PR merge)*
+     - When **starting** a task: add the `in-progress` label to its corresponding GitHub issue:
+       ```bash
+       gh issue edit <number> --repo owner/repo --add-label "in-progress"
+       ```
+     - When **completing** a task: replace `in-progress` with `pr-review`:
+       ```bash
+       gh issue edit <number> --repo owner/repo --remove-label "in-progress" --add-label "pr-review"
+       ```
+     - **NEVER close issues manually**. Issues must be closed automatically by GitHub when the PR is merged, using `Closes #N` references in the PR body.
 
 9. Completion validation:
    - Verify all required tasks are completed
@@ -174,6 +197,10 @@ You **MUST** consider the user input before proceeding (if not empty).
    - Validate that tests pass and coverage meets requirements
    - Confirm the implementation follows the technical plan
    - Report final status with summary of completed work
+   - **GitHub Issue Cleanup** (if issue mapping exists from step 5b):
+     - Ensure all completed task issues have the `pr-review` label (and no `in-progress` label remaining)
+     - **Do NOT close issues manually** — they will be closed automatically when the PR is merged
+     - When creating a PR (or suggesting the user create one), include `Closes #N` for each mapped issue in the PR body so GitHub auto-closes them on merge
 
 Note: This command assumes a complete task breakdown exists in tasks.md. If tasks are incomplete or missing, suggest running `/speckit.tasks` first to regenerate the task list.
 
