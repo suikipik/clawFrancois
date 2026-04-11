@@ -96,9 +96,9 @@
 
 **Purpose**: Documentation and validation across all stories
 
-- [ ] T021 [P] Update quickstart.md with final installation and usage instructions in specs/002-whisper-voice-transcription/quickstart.md
-- [ ] T022 [P] Add whisper dependency note to project README or docs
-- [ ] T023 Run quickstart.md validation — follow the quickstart from scratch and verify all steps work
+- [x] T021 [P] Update quickstart.md with final installation and usage instructions in specs/002-whisper-voice-transcription/quickstart.md
+- [x] T022 [P] Add whisper dependency note to project README or docs
+- [x] T023 Run quickstart.md validation — follow the quickstart from scratch and verify all steps work
 
 ---
 

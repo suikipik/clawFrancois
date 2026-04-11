@@ -112,6 +112,18 @@ The project should be considered successful when:
 - Should the bridge support multiple client channels simultaneously (e.g. web + Telegram)?
 - For bot-based channels, how should streaming be handled given platform-specific message limits and rate constraints?
 
+## Voice Message Support
+
+The bridge supports voice messages via local speech-to-text transcription. Send a voice message in Telegram and it will be transcribed and forwarded to Claude as a prompt.
+
+**Requirements** (optional — only needed for voice):
+- [OpenAI Whisper](https://github.com/openai/whisper): `pip install openai-whisper`
+- [ffmpeg](https://ffmpeg.org/): `brew install ffmpeg` (macOS) or `sudo apt install ffmpeg` (Linux)
+
+**Configuration** (in `~/.claude-bridge/config.json`):
+- `whisper_model`: Model size — `"tiny"`, `"base"` (default), `"small"`, `"medium"`, `"large"`
+- `max_audio_duration`: Max voice message length in seconds (default: 300)
+
 ## Next Step
 
 Translate this specification into a minimal implementation with a local server, secure token authentication, a mobile web frontend, and streamed CLI output.
