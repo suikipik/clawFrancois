@@ -1,8 +1,19 @@
-# Claude Mobile Bridge — Project Specification
+# clawFrancois
+
+<div align="center">
+  <img src="assets/logo.png" alt="clawFrancois Logo" width="200" height="200">
+</div>
 
 ## Project Overview
 
-`Claude Mobile Bridge` is a local utility that allows a user to interact with a Claude CLI workflow from a mobile device. The project provides a secure interface that sends prompts from the mobile client to the local machine, where they are executed by the Claude CLI. The CLI output is streamed back to the mobile client in near real time, preserving a live command-line experience on the go.
+`clawFrancois` is a local utility that allows a user to interact with a Claude CLI workflow from a mobile device. The project provides a secure interface that sends prompts from the mobile client to the local machine, where they are executed by the Claude CLI. The CLI output is streamed back to the mobile client in near real time, preserving a live command-line experience on the go.
+
+### Project Identity
+
+- **Name**: clawFrancois (the red lobster mascot with the attitude!)
+- **Logo**: Stored in [assets/logo.png](assets/logo.png) — used throughout the project for branding
+- **Branding Guide**: See [assets/BRANDING.md](assets/BRANDING.md) for logo usage guidelines
+- **Web Interface**: HTML templates with integrated branding available in [assets/templates/](assets/templates/)
 
 The mobile client could take several forms — a browser-based interface accessed over the local network, a Telegram bot relaying messages to the local machine, a dedicated mobile app, or any other channel that fits the user's workflow. The choice of client channel is deliberately left open at this stage.
 
@@ -127,3 +138,86 @@ The bridge supports voice messages via local speech-to-text transcription. Send 
 ## Next Step
 
 Translate this specification into a minimal implementation with a local server, secure token authentication, a mobile web frontend, and streamed CLI output.
+
+## Project Structure
+
+```
+clawFrancois/
+├── assets/                 # Project branding and web assets
+│   ├── logo.png           # Official project avatar (200x200px)
+│   ├── favicon.png        # Favicon for web interface
+│   ├── BRANDING.md        # Logo usage guidelines
+│   └── templates/         # HTML templates with logo integration
+│       ├── index.html     # Main chat interface
+│       └── README.md      # Template documentation
+├── src/                   # Python source code
+│   ├── __main__.py        # Application entry point
+│   ├── bridge.py          # Core bridge logic
+│   ├── telegram_adapter.py # Telegram bot integration
+│   ├── transcriber.py     # Voice transcription support
+│   ├── session_store.py   # Session persistence
+│   └── ...
+├── tests/                 # Unit and integration tests
+├── specs/                 # Feature specifications and plans
+├── pyproject.toml         # Python project configuration
+├── requirements.txt       # Production dependencies
+├── requirements-dev.txt   # Development dependencies
+└── README.md             # This file
+```
+
+## Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/suikipik/clawFrancois.git
+cd clawFrancois
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Optional: Install voice transcription support
+pip install openai-whisper ffmpeg
+```
+
+### Configuration
+
+1. Create a configuration file at `~/.claude-bridge/config.json`:
+```json
+{
+  "telegram_token": "YOUR_BOT_TOKEN_HERE",
+  "telegram_user_ids": ["YOUR_USER_ID"],
+  "claude_cli_path": "/path/to/claude",
+  "whisper_model": "base"
+}
+```
+
+2. Set up your Telegram bot token from [@BotFather](https://t.me/botfather) on Telegram.
+
+### Running the Bridge
+
+```bash
+python -m src
+```
+
+The bridge will start and listen for incoming Telegram messages.
+
+## Features
+
+✨ **Core**
+- Secure token-based authentication
+- Real-time CLI output streaming
+- Session persistence
+- Mobile-responsive web interface with clawFrancois branding
+
+🎙️ **Voice Support** (Optional)
+- Voice message transcription via OpenAI Whisper
+- Automatic speech-to-text conversion
+- Configurable model sizes for performance/accuracy tradeoffs
+
+🤖 **Multi-Channel Support**
+- Telegram bot (primary)
+- Web interface (in development)
+- Discord bot (future)
+- SMS gateway (future)
