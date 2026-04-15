@@ -1,8 +1,8 @@
-# clawdfrancois Project Setup Documentation
+# clawdFrancois Project Setup Documentation
 
 ## Overview
 
-The clawdfrancois project has been set up with comprehensive branding and avatar integration. This document explains all the places where the logo/avatar is used and how to maintain consistency.
+The clawdFrancois project has been set up with comprehensive branding and avatar integration. This document explains all the places where the logo/avatar is used and how to maintain consistency.
 
 ## What Was Set Up
 

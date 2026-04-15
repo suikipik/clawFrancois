@@ -1,16 +1,16 @@
-# clawdfrancois
+# clawdFrancois
 
 <div align="center">
-  <img src="assets/logo.png" alt="clawdfrancois Logo" width="200" height="200">
+  <img src="assets/logo.png" alt="clawdFrancois Logo" width="200" height="200">
 </div>
 
 ## Project Overview
 
-`clawdfrancois` is a local utility that allows a user to interact with a Claude CLI workflow from a mobile device. The project provides a secure interface that sends prompts from the mobile client to the local machine, where they are executed by the Claude CLI. The CLI output is streamed back to the mobile client in near real time, preserving a live command-line experience on the go.
+`clawdFrancois` is a local utility that allows a user to interact with a Claude CLI workflow from a mobile device. The project provides a secure interface that sends prompts from the mobile client to the local machine, where they are executed by the Claude CLI. The CLI output is streamed back to the mobile client in near real time, preserving a live command-line experience on the go.
 
 ### Project Identity
 
-- **Name**: clawdfrancois (the red lobster mascot with the attitude!)
+- **Name**: clawdFrancois (the red lobster mascot with the attitude!)
 - **Logo**: Stored in [assets/logo.png](assets/logo.png) — used throughout the project for branding
 - **Branding Guide**: See [assets/BRANDING.md](assets/BRANDING.md) for logo usage guidelines
 - **Web Interface**: HTML templates with integrated branding available in [assets/templates/](assets/templates/)
@@ -142,7 +142,7 @@ Translate this specification into a minimal implementation with a local server, 
 ## Project Structure
 
 ```
-clawdfrancois/
+clawdFrancois/
 ├── assets/                 # Project branding and web assets
 │   ├── logo.png           # Official project avatar (200x200px)
 │   ├── favicon.png        # Favicon for web interface
@@ -171,8 +171,8 @@ clawdfrancois/
 
 ```bash
 # Clone the repository
-git clone https://github.com/suikipik/clawdfrancois.git
-cd clawdfrancois
+git clone https://github.com/suikipik/clawdFrancois.git
+cd clawdFrancois
 
 # Install dependencies
 pip install -r requirements.txt
@@ -209,7 +209,7 @@ The bridge will start and listen for incoming Telegram messages.
 - Secure token-based authentication
 - Real-time CLI output streaming
 - Session persistence
-- Mobile-responsive web interface with clawdfrancois branding
+- Mobile-responsive web interface with clawdFrancois branding
 
 🎙️ **Voice Support** (Optional)
 - Voice message transcription via OpenAI Whisper
