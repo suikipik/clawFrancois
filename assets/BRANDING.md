@@ -1,8 +1,8 @@
-# clawFrancois Avatar & Branding
+# clawdfrancois Avatar & Branding
 
 ## Logo
 
-The official **clawFrancois** logo is stored in the `assets/` directory:
+The official **clawdfrancois** logo is stored in the `assets/` directory:
 
 - **File**: `assets/logo.png`
 - **Dimensions**: 200x200px (can be scaled)
@@ -25,7 +25,7 @@ The bridge server can optionally include the logo URL or base64-encoded data in 
 ### Docker/Container Images
 If Docker images are created, consider using the logo as the container image metadata:
 ```dockerfile
-LABEL maintainer="clawFrancois"
+LABEL maintainer="clawdfrancois"
 LABEL icon="logo.png"
 ```
 
@@ -43,7 +43,7 @@ assets/
 ## Branding Standards
 
 - **Primary Color**: Red (#FF0000 approximate)
-- **Project Name**: clawFrancois (with ç character)
+- **Project Name**: clawdfrancois (with ç character)
 - **Mascot**: Red lobster with blonde hair
 - **Theme**: Playful, tech-forward coastal imagery
 
