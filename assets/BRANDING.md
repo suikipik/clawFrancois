@@ -1,8 +1,8 @@
-# clawdfrancois Avatar & Branding
+# clawdFrancois Avatar & Branding
 
 ## Logo
 
-The official **clawdfrancois** logo is stored in the `assets/` directory:
+The official **clawdFrancois** logo is stored in the `assets/` directory:
 
 - **File**: `assets/logo.png`
 - **Dimensions**: 200x200px (can be scaled)

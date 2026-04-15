@@ -3,13 +3,13 @@ requires = ["setuptools>=65", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "clawdfrancois"
+name = "clawdFrancois"
 version = "0.1.0"
 description = "A local utility for interacting with Claude CLI from a mobile device via Telegram"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "clawdfrancois Contributors"}
+    {name = "clawdFrancois Contributors"}
 ]
 keywords = ["claude", "telegram", "mobile", "cli", "bridge", "voice"]
 classifiers = [
