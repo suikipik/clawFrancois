@@ -1,8 +1,8 @@
-# clawFrancois Project Setup Documentation
+# clawdfrancois Project Setup Documentation
 
 ## Overview
 
-The clawFrancois project has been set up with comprehensive branding and avatar integration. This document explains all the places where the logo/avatar is used and how to maintain consistency.
+The clawdfrancois project has been set up with comprehensive branding and avatar integration. This document explains all the places where the logo/avatar is used and how to maintain consistency.
 
 ## What Was Set Up
 
@@ -27,7 +27,7 @@ The clawFrancois project has been set up with comprehensive branding and avatar 
 - **Features**:
   - Responsive design with logo in header
   - Mobile-friendly chat interface
-  - Gradient background matching clawFrancois branding
+  - Gradient background matching clawdfrancois branding
   - Status indicator for connection state
   - Ready for backend integration
 
@@ -58,7 +58,7 @@ The clawFrancois project has been set up with comprehensive branding and avatar 
 - [ ] Test responsiveness on mobile devices (320px - 768px widths)
 
 ### For Telegram Bot
-- [ ] Set bot profile picture to clawFrancois logo via [@BotFather](https://t.me/botfather)
+- [ ] Set bot profile picture to clawdfrancois logo via [@BotFather](https://t.me/botfather)
 - [ ] Use logo in welcome messages
 - [ ] Include logo in command help text (if supported)
 
@@ -79,7 +79,7 @@ The clawFrancois project has been set up with comprehensive branding and avatar 
 
 ## Color Scheme
 
-From the clawFrancois logo:
+From the clawdfrancois logo:
 - **Primary Red**: `#FF0000` (vibrant red lobster)
 - **Accent Gold**: `#FFD700` (blonde hair)
 - **Background**: Can use white, light gray, or gradient (purple gradient used in templates)
@@ -99,7 +99,7 @@ app.mount("/static", StaticFiles(directory="assets"), name="static")
 
 ### HTML - Logo Image Tag
 ```html
-<img src="/static/logo.png" alt="clawFrancois Logo" width="120" height="120">
+<img src="/static/logo.png" alt="clawdfrancois Logo" width="120" height="120">
 ```
 
 ### HTML - Favicon
@@ -168,5 +168,5 @@ For logo usage questions, refer to:
 ---
 
 **Setup completed on**: April 14, 2026  
-**Avatar**: clawFrancois (Red Lobster Mascot)  
+**Avatar**: clawdfrancois (Red Lobster Mascot)  
 **Status**: ✅ Ready for development

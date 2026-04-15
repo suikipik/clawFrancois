@@ -1,12 +1,12 @@
 # Web Interface Templates
 
-This directory contains HTML templates for the web-based interface of clawFrancois.
+This directory contains HTML templates for the web-based interface of clawdfrancois.
 
 ## Files
 
 - **index.html** - Main chat interface with logo branding
   - Mobile-responsive design
-  - Dark gradient theme with clawFrancois branding
+  - Dark gradient theme with clawdfrancois branding
   - Real-time message display
   - Status indicator for connection state
 
@@ -15,7 +15,7 @@ This directory contains HTML templates for the web-based interface of clawFranco
 The templates reference the logo from `/static/logo.png` at runtime:
 
 ```html
-<img src="/static/logo.png" alt="clawFrancois Logo">
+<img src="/static/logo.png" alt="clawdfrancois Logo">
 ```
 
 When serving these templates, ensure the static files middleware is configured to serve assets from the `assets/` directory.
